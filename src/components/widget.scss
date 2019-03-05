@@ -1,0 +1,17 @@
+.tabsfilterwidget {
+  &,
+  & * {
+    box-sizing: border-box;
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  position: fixed;
+  width: 90%;
+  border: 1px solid grey;
+  padding: 5rem 1rem 1rem;
+}
