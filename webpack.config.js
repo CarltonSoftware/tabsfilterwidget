@@ -4,6 +4,7 @@ const increaseSpecificity = require('postcss-increase-specificity');
 const JavaScriptObfuscator = require('webpack-obfuscator');
 
 const devMode = process.env.NODE_ENV !== 'production';
+const widgetversion = '1.0';
 
 const defaultConfig = {
   mode: 'production',
@@ -74,5 +75,24 @@ module.exports = [{
     path: __dirname + '/dist',
     publicPath: '/',
     filename: 'bookmarklet.js',
+  },
+},{
+  ...defaultConfig,
+  entry: './src/outputs/embeddable-widget.js',
+  output: {
+    path: __dirname + '/dist',
+    publicPath: '/',
+    filename: 'widget.' + widgetversion + '.js',
+    library: 'EmbeddableWidget',
+    libraryExport: 'default',
+    libraryTarget: 'window',
+  },
+}, {
+  ...defaultConfig,
+  entry: './src/outputs/bookmarklet.js',
+  output: {
+    path: __dirname + '/dist',
+    publicPath: '/',
+    filename: 'bookmarklet.' + widgetversion + '.js',
   },
 }];
