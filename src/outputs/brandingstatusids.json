@@ -1,0 +1,8 @@
+[
+  {"id":1,"name":"Live","allowbooking":true,"allowoverride":false,"priority":10,"allowbalance":true},
+  {"id":2,"name":"New","allowbooking":false,"allowoverride":false,"priority":8,"allowbalance":true},
+  {"id":3,"name":"Suspended","allowbooking":false,"allowoverride":true,"priority":6,"allowbalance":true},
+  {"id":4,"name":"Withdrawn","allowbooking":false,"allowoverride":false,"priority":0,"allowbalance":false},
+  {"id":5,"name":"In Recruitment","allowbooking":false,"allowoverride":false,"priority":0,"allowbalance":true},
+  {"id":6,"name":"Recruitment Lost","allowbooking":false,"allowoverride":false,"priority":0,"allowbalance":false}
+]

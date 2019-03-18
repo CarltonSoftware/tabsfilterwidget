@@ -6,8 +6,8 @@ import '../../vendor/cleanslate.css';
 export default class EmbeddableWidget {
   static el;
 
-  static mount(filters, defaultValue, callback, onClose) {
-    const component = <Widget defaultValue={ defaultValue } onClose={ onClose } callback={ callback } filters={ filters } />;
+  static mount(filters, selects, defaultValue, callback, onClose) {
+    const component = <Widget defaultValue={ defaultValue } selects={ selects } onClose={ onClose } callback={ callback } filters={ filters } />;
 
     function doRender() {
       if (EmbeddableWidget.el) {

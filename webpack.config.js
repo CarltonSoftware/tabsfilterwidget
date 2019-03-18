@@ -4,12 +4,12 @@ const increaseSpecificity = require('postcss-increase-specificity');
 const JavaScriptObfuscator = require('webpack-obfuscator');
 
 const devMode = process.env.NODE_ENV !== 'production';
-const widgetversion = '1.0';
+const widgetversion = '1.1';
 
 const defaultConfig = {
   mode: 'production',
   plugins: [
-    new CleanWebpackPlugin(['dist/']),
+    new CleanWebpackPlugin(['dist/widget.js', 'dist/bookmarklet.js']),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional

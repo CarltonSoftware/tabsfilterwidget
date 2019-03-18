@@ -1,5 +1,6 @@
 import EmbeddableWidget from './embeddable-widget';
-import content from './propertyfilters.json';
+import propertyfilters from './propertyfilters.json';
+import brandingstatusids from './brandingstatusids.json';
 
 export default function bookmarklet() {
   if (!window.EmbeddableWidget) {
@@ -11,7 +12,8 @@ export default function bookmarklet() {
     return;
   }
 
-  var filters = window.tabsfilters || (window.drupalSettings && window.drupalSettings.tabsfilters) || content;
+  var filters = window.tabsfilters || (window.drupalSettings && window.drupalSettings.tabsfilters) || propertyfilters;
+  var selects = window.tabsfilterselects || (window.drupalSettings && window.drupalSettings.tabsfilterselects) || { brandingstatusid: brandingstatusids };
   var defaultValue = window.tabsfiltersdefaultValue || (window.drupalSettings && window.drupalSettings.tabsfiltersdefaultValue) || [];
   var setDefaultValue = function(filters) {
     if (window.drupalSettings && window.drupalSettings.tabsfiltersdefaultValue) {
@@ -23,6 +25,7 @@ export default function bookmarklet() {
 
   EmbeddableWidget.mount(
     filters,
+    selects,
     defaultValue,
     function(filters, filterString) {
       var collection = document.getElementsByClassName('tabsfiltervalue');
