@@ -169,7 +169,7 @@ getFilterInput = (type, value, onChange, props) => {
     ) {
       return (
         <select defaultValue={ value } onChange={ onChange } {...props}>
-          <option key={ 0 }>Select</option>
+          <option key={ 0 } value="">Select</option>
           { 
             this.props.selects[this.props.filter.key].map(function(o, i) {
               return (
