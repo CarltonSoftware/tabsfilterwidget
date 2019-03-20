@@ -424,19 +424,20 @@ class SearchFilter extends Component {
     });
   }
 
-  removeFilter = (event) => {
-    event.preventDefault();
-    let key = event.currentTarget.value;
+  removeFilter = (index) => {
     var selectedFilters = this.state.selectedFilters;
-    selectedFilters.splice(key,1);
-
+    selectedFilters.splice(index,1);
     this.setSelectedFilters(selectedFilters);
   }
 
   render() {
     let selectedFilterControls = this.state.selectedFilters.map((filter, i) => {
+      const remove = (event) => {
+        event.preventDefault();
+        return this.removeFilter(i);
+      };
       return (
-        <SearchFilterRow key={ filter.key +  i } filter={ filter } selects={ this.props.selects } removeFilter={ this.removeFilter } updateFilter={ this.updateFilter } />
+        <SearchFilterRow key={ filter.key +  i } filter={ filter } selects={ this.props.selects } removeFilter={ remove } updateFilter={ this.updateFilter } />
       );
     });
 
