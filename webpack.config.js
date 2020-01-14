@@ -4,7 +4,7 @@ const increaseSpecificity = require('postcss-increase-specificity');
 const JavaScriptObfuscator = require('webpack-obfuscator');
 
 const devMode = process.env.NODE_ENV !== 'production';
-const widgetversion = '1.4';
+const widgetversion = '1.5';
 
 const defaultConfig = {
   mode: 'production',

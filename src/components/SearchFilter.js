@@ -244,9 +244,9 @@ getFilterValue = () => {
       if (currentOperator === "/") {
         return (
           <React.Fragment> 
-            { this.getFilterInput(this.props.filter.type, defaultValue.from, this[handler + 'From'], { maxDate: defaultValue.to }) } 
+            { this.getFilterInput(this.props.filter.type, defaultValue.from, this[handler + 'From']) } 
             <span>to</span>
-            { this.getFilterInput(this.props.filter.type, defaultValue.to, this[handler + 'To'], { minDate: defaultValue.from }) }
+            { this.getFilterInput(this.props.filter.type, defaultValue.to, this[handler + 'To']) }
           </React.Fragment>
         );
       } else if (currentOperator === '|') {
